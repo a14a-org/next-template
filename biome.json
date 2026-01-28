@@ -1,0 +1,70 @@
+{
+	"$schema": "https://biomejs.dev/schemas/2.3.13/schema.json",
+	"files": {
+		"includes": ["src/**", "*.json", "*.ts", "*.tsx", "*.js", "*.mjs"]
+	},
+	"assist": { "actions": { "source": { "organizeImports": "on" } } },
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"recommended": true,
+			"complexity": {
+				"noForEach": "error",
+				"useFlatMap": "error"
+			},
+			"style": {
+				"noDefaultExport": "error",
+				"useExportType": "error",
+				"useImportType": "error",
+				"noNonNullAssertion": "warn"
+			},
+			"suspicious": {
+				"noExplicitAny": "warn",
+				"noArrayIndexKey": "error"
+			},
+			"correctness": {
+				"useExhaustiveDependencies": "warn",
+				"useHookAtTopLevel": "error"
+			}
+		}
+	},
+	"formatter": {
+		"enabled": true,
+		"indentStyle": "tab",
+		"indentWidth": 2
+	},
+	"javascript": {
+		"formatter": {
+			"semicolons": "asNeeded",
+			"quoteStyle": "single"
+		}
+	},
+	"css": {
+		"parser": {
+			"tailwindDirectives": true
+		}
+	},
+	"overrides": [
+		{
+			"includes": [
+				"**/src/app/**/page.tsx",
+				"**/src/app/**/layout.tsx",
+				"**/src/app/**/loading.tsx",
+				"**/src/app/**/error.tsx",
+				"**/src/app/**/not-found.tsx",
+				"**/src/app/**/route.ts",
+				"**/src/middleware.ts",
+				"**/next.config.ts",
+				"**/postcss.config.mjs",
+				"**/tailwind.config.ts"
+			],
+			"linter": {
+				"rules": {
+					"style": {
+						"noDefaultExport": "off"
+					}
+				}
+			}
+		}
+	]
+}
